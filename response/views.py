@@ -33,6 +33,9 @@ def get_question(request):
 @login_required(login_url='/accounts/login/')
 def question(request):
     return render(request,'response/index.html')
+
+def get_question_not_logged(request):
+    return render(request,'response/index2.html')
     
     
     

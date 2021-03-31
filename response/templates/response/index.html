@@ -1,4 +1,3 @@
-
 {% extends 'base2.html' %}
 
 {% load static %}
@@ -18,16 +17,16 @@
 body{
   background: url("{% static 'response/images/industry5.jpg' %}") no-repeat top center;
   background-size: cover;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .wrapper{
   position: absolute;
-  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 100%;
-  max-width: 550px;
+  max-width: 60%;
   background: rgba(0,0,0,0.6);
   padding: 30px;
 
@@ -76,6 +75,8 @@ word-wrap:break-word;
 
 .msg textarea{
   height: 30px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 ::-webkit-input-placeholder {
@@ -116,6 +117,9 @@ button{
   h5{
       font-size: 0.6em;
   }
+  .wrapper{
+    max-width: 80%;
+  }
 }
 
 
@@ -135,84 +139,7 @@ word-wrap:break-word;
   margin-bottom: 10px;
 }
 
- /* h1,
-  h3 {
-    color: #ccffff;
-  }
-
-  .classOfElements {
-    text-align: center;
-    vertical-align: middle;
-  
-    top: 20%;
-  }
-
-  .auditionbtn {
-    text-align: center;
-    margin: 0px;
-  }
-
-  @media(max-width:768px) {
-    .classOfElements {
-      top: 0%;
-    }
-
-    .auditionbtn {
-      margin-top: -25%;
-    }
-  }
-
-  #response {
-    width: 50%;
-    height: 40px;
-  }
-
-  .button1 {
-    background: #003366;
-    color: #fff;
-    border: none;
-    position: relative;
-    height: 60px;
-    font-size: 1.6em;
-    padding: 0 2em;
-    cursor: pointer;
-    transition: 800ms ease all;
-    outline: none;
-  }
-
-  .button1:hover {
-    background: #fff;
-    color: #000000;
-  }
-
-  .button1:before,
-  .button1:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    background: #250603;
-    transition: 700ms ease all;
-  }
-
-  .button1:after {
-    right: inherit;
-    top: inherit;
-    left: 0;
-    bottom: 0;
-  }
-
-  .button1:hover:before,
-  .button1:hover:after {
-    width: 100%;
-    transition: 800ms ease all;
-  }
-.qstn{
-  margin-left:100px;
-  margin-right: 100px;
-}*/
+ 
 
 </style>
 {% endblock styles %}
@@ -224,11 +151,34 @@ word-wrap:break-word;
   <form method="post">
     {% csrf_token %}
     <div class="title">
-         <h2>PROBLEM STATEMENT </h2>
-      <h1>Ingenuitus problem Statement.
-      </h1>
-      <a href="">Sample model link here</a>
-    </div>
+      <h2>PROBLEM STATEMENTS</h2>
+   <h1>Ingenuitus provides a platform to analyze some key challenges faced by leading industrial sectors and propose feasible solutions that can be adopted and implemented over wide scale. We invite participants in teams consisting of 1-3 members to analyze one among the given problem tracks and work together to prepare a presentation pitching the best solution. From the range of given problem tracks participants need to select one among the following tracks and submit their presentations by 4th April 7 am . We will be conducting Ingenuitus on virtual platform on 4th April starting from 10 am where teams will have to present their solutions to the judges. <br>
+     <br>
+     Problem Tracks  for the participants
+     (Select one among the below tracks) <br>
+      <br>
+     1)	Track : 5G <br>
+     The extent of deployment of the 5G network communication in the automobile industry
+     The evolution of cellular network technologies has always been fascinating with its advanced network features offered by every generation. The transition from 4G to 5G will not be as difficult as the previous transitions and huge applications of this 5th generation can be implemented in various fields.  But every generation of cellular communication technology comes with its problems and limitations along with its benefits. Analyze how can the 5G technology reform the automobile industry and the limitations in practicality of the achieving the advantages.
+     <br><br>
+     2)Track IOT and Smart City: <br>
+     The Solution to inculcate Social Inclusiveness while bridging digital divide as one of the key challenges offered by Smart Cities.
+     What about the people who can’t afford the smart gadgets or the group of elderly people who find it difficult to get accustomed with the new smart technologies? It’s crucial that Smart City planning involves the consideration of all groups of people and not just the well off and technologically advanced groups. Technologies should always function attaining social inclusiveness at all standards rather than dividing them. Propose solutions to bring in advancement offered by the smart cities to every section of the society.
+     <br> <br>
+     3)Track : Autonomous Vehicle <br>
+     Technology deployed for preventing accidents and ensuring safety in regard to Autonomous Vehicle.
+     
+     In this modernized world, Driver assistive technologies have been in trend because of the increase in cases over unexpected accidents derailing the world and leading to loss of precious lives. Driver Assistive technology has been tested in various vehicles till date. Analyse the successful and failed attempts where this technology has been incorporated in vehicles. Prepare a proposal on their future scope in fully autonomous vehicles.
+     
+     
+     
+     <br> <br>
+     4)Track: Electric Vehicle <br>                                                       
+     Technologies used in the manufacturing of Storage of electrical energy for Electric Vehicles and their efficiency at various physical conditions.
+     As the new era of Electric vehicles geared up the main fuel for them is electric energy. The energy needs to be stored and reproduced as efficiently as possible. Many technologies have been proposed and are being implemented for this. Analyse the different technology and turning up the pros & cons of each technology come up with an optimal and innovative solution for better efficiency keeping in view the environmental hazards associated and the future scope of technology.
+     <br>
+   </h1>
+ </div>
     {% if response %}
     <div class="msg">
       <textarea name="response" class="ans" placeholder={{response}}></textarea>

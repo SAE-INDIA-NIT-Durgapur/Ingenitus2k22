@@ -167,7 +167,7 @@ h1 span:nth-child(14){ animation-delay:.65s; }
   /*footer styling */
   footer {
     position: absolute;
-    bottom: -70px;
+    bottom: -10px;
     left: 0;
     right: 0;
     background: #001121 !important;
@@ -282,20 +282,34 @@ svg {
     <div class="content">
      <h1><span>I</span><span>N</span><span>G</span><span>E</span><span>N</span><span> </span><span>U</span><span>I</span><span>T</span><span>U</span><span> </span><span>S</span></h1>
 	      {% if user.is_authenticated %}
-            <a class="btn" href="/response/index.html" style="color:  #ccffff">Proceed to problem Statement.</a>
+         <!----  <a class="btn" href="/response/index.html" style="color:  #ccffff">Proceed to problem Statement.</a>-->
         {% else %}
+            <a class="btn" href="{% url 'get_question_not_logged' %}" style="color:  #ccffff">View problem Statement.</a><br><br><br>
             <a class="btn" href="{% url 'teamregistration' %}" style="color:  #ccffff">Register your Team</a><br><br><br>
-	    <a class="btn" href="{% url 'register' %}" style="color: #ccffff">Sign Up</a><br><br><br>
-            <a class="btn" href="{% url 'login' %}" style="color:  #ccffff">Login</a>
+	   <!---- <a class="btn" href="{% url 'register' %}" style="color: #ccffff">Sign Up</a><br><br><br>
+            <a class="btn" href="{% url 'login' %}" style="color:  #ccffff">Login</a>-->
+            <a class="btn"  style="color: #FFFF00">Submission starts from 2nd April 12:01 AM</a>
+
         {% endif %}
         <br><br><br>
             <a class="btn" href="{% url 'rules' %}" style="color:  #ccffff">Rules</a>
         
     </div>
   </div>
+
+  <footer>
+        <div class="footer-content">
+            <ul class="socials">
+                <img style="width:150;height:60px;padding:5px;"  src="{% static 'response/images/bluelogo2.png' %}">
+            </ul>
+        </div>
+
+</footer>
+
 </section>
 <div class="cursor"></div>
 <div class="cursor2"></div>
+
 
 
 <!--cursor script-->
@@ -308,6 +322,6 @@ svg {
 </script>
 
 
-
+</body>
 </html>
 {% endblock %}
